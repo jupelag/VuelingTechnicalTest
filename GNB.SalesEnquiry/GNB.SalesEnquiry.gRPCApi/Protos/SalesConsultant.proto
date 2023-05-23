@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "GNB.SalesEnquiry.gRPCApi";
+
+package consultant;
+
+// The greeting service definition.
+service SalesEnquiry {
+  // Sends a greeting
+  rpc GetRatesAsync (EmptyMessage) returns (RateDtos);
+  rpc GetTransactionsAsync (EmptyMessage) returns (TransactionDtos);
+  rpc GetTransactionsInEurBySkuAsync (sku) returns (TransactionDtos);
+  rpc GetTotalTransactionsAmountInEurAsync (EmptyMessage) returns (amount);
+}
+
+message sku
+{
+	string sku = 1;
+}
+message amount
+{
+	double amount = 1;
+}
+
+message RateDtos
+{
+	repeated RateDto Rates = 1;
+}
+message TransactionDtos
+{
+	repeated TransactionDto Transactions = 1;
+}
+// The request message containing the user's name.
+message RateDto {
+  string from = 1;
+  string to = 2;
+  double rate = 3;
+}
+
+// The response message containing the greetings.
+message TransactionDto {
+  string sku = 1;
+  double amount = 2;
+  string currency = 3;
+}
+
+message EmptyMessage{}

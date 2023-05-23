@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "GNB.SalesEnquiry.gRPCApi": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5143;https://localhost:7114",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

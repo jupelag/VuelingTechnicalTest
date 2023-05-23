@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\SalesConsultant.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GNB.SalesEnquiry.ApiProvider\GNB.SalesEnquiry.ApiProvider.csproj" />
+    <ProjectReference Include="..\GNB.SalesEnquiry.Core\GNB.SalesEnquiry.Core.csproj" />
+    <ProjectReference Include="..\GNB.SalesEnquiry.DataAccess\GNB.SalesEnquiry.DataAccess.csproj" />
+    <ProjectReference Include="..\GNB.SalesEnquiry.DbProvider\GNB.SalesEnquiry.DbProvider.csproj" />
+    <ProjectReference Include="..\GNB.SalesEnquiry.Provider\GNB.SalesEnquiry.Provider.csproj" />
+    <ProjectReference Include="..\GNB.SalesEnquiry.RateCompleter\GNB.SalesEnquiry.RateCompleter.csproj" />
+  </ItemGroup>
+
+</Project>
